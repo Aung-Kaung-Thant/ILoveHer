@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255,255,255,0.95);
+      padding: 35px 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff3f6c;
+      margin-bottom: 20px;
+    }
+
+    #text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+      min-height: 120px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #next, #yes {
+      background: #ff477e;
+      color: white;
+    }
+
+    #no {
+      background: #ddd;
+      color: #333;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    .heart {
+      position: fixed;
+      color: rgba(255,255,255,0.8);
+      font-size: 25px;
+      animation: fall 5s linear infinite;
+      top: -50px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    #answer {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div id="main">
+      <h1>ဟေး... ❤️</h1>
+
+      <p id="text">
+        မင်းကို ပြောချင်တာလေးတစ်ခုရှိတယ်...
+      </p>
+
+      <button id="next" onclick="nextText()">Next ❤️</button>
+    </div>
+
+    <div id="answer">
+      <h1>ဒါကြောင့်... ❤️</h1>
+
+      <p>
+        ငါ မင်းကို သဘောကျနေမိပြီ။<br>
+        မင်းဘက်ကရော... ငါ့ကို အခွင့်အရေးလေးပေးနိုင်မလား?
+      </p>
+
+      <button id="yes" onclick="yesAnswer()">Yes ❤️</button>
+      <button id="no" onclick="noAnswer()">No</button>
+
+      <p id="result"></p>
+    </div>
+<footer style="font-size: small;">© 2026 | This is not sell or share personal information | Developer - De Par Zaw & <a href="/IloveHer/about.html">Nicholas Cain/Aung Kaung Thant</a></footer>
+  </div>
+  <br>
+  
+  <script>
+
+    const messages = [
+      "မင်းကို ပြောချင်တာလေးတစ်ခုရှိတယ်... ❤️",
+      "ဒီစကားကို ဘယ်လိုစပြောရမလဲတောင် မသိဘူး...",
+      "ဒါပေမယ့် ရင်ထဲမှာထားနေတာကြာပြီဆိုတော့ ပြောလိုက်တော့မယ်။",
+      "ငါ မင်းကို သဘောကျတယ်။ ❤️",
+      "မင်းနဲ့ စကားပြောရတဲ့အချိန်တွေကိုလည်း သဘောကျတယ်။",
+      "မင်းဘက်က ဘယ်လိုခံစားရလဲဆိုတာ ငါမသိဘူး...",
+      "ဒါပေမယ့် ငါ့ခံစားချက်ကိုတော့ ရိုးရိုးသားသားပြောချင်တယ်။"
+    ];
+
+    let index = 0;
+
+    function nextText() {
+      index++;
+
+      if (index < messages.length) {
+        document.getElementById("text").innerHTML = messages[index];
+      } else {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("answer").style.display = "block";
+      }
+    }
+
+    function yesAnswer() {
+      document.getElementById("result").innerHTML =
+        "🥹❤️ တကယ်လား... ကျေးဇူးတင်တယ်။";
+    }
+
+    function noAnswer() {
+      document.getElementById("result").innerHTML =
+        "အဆင်ပြေပါတယ်။ မင်းရဲ့ဆုံးဖြတ်ချက်ကို ငါလေးစားပါတယ်။ ❤️";
+    }
+
+    // Falling hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration =
+        (3 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 500);
+
+  </script>
+
+</body>
+</html>

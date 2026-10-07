@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Developer | Nicholas Cain</title>
+    <link rel="icon" href="/IloveHer/logo.jpeg">
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1d1d1d 0%, #060606 100%);
+            color: #b69d75;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        a {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #b69d75;
+            color: #b69d75;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+        
+        a:hover {
+            background: #b69d75;
+            color: #1d1d1d;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #b69d75, #8a7455);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #1d1d1d;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(182, 157, 117, 0.3);
+        }
+
+        .logopng{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            /* background: linear-gradient(45deg, #b69d75, #e8c8a0);
+            -webkit-text-fill-color: transparent; */
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #8a7455;
+            margin-bottom: 30px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .contact-item {
+            font-size: 8px;
+        }
+        .card {
+            background: rgba(6, 6, 6, 0.8);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #b69d75;
+        }
+        
+        .card h3 {
+            color: #b69d75;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background: rgba(182, 157, 117, 0.2);
+            border: 1px solid #b69d75;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background: #b69d75;
+            color: #1d1d1d;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #b69d75;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #b69d75;
+        }
+        
+        .year {
+            color: #8a7455;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(6, 6, 6, 0.8);
+            border-radius: 10px;
+            border: 1px solid #333;
+            font-size: large;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: #b69d75;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1d1d1d;
+            font-size: normal;
+        }
+        
+        .quote {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            padding: 30px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            margin: 50px 0;
+            color: #8a7455;
+        }
+        
+        .quote strong {
+            color: #b69d75;
+            display: block;
+            margin-top: 15px;
+        }
+        .result-area {
+            background: #00000066;
+            border-radius: 40px;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #FFE6AA;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Experience</a>
+
+        <div class="header">
+            <div class="profile-img"><img src="/IloveHer/logo.jpeg" alt="logo" class="logopng"></div>
+            <h1>Nicholas Cain</h1>
+            <p class="tagline">Web Developer & Digital Craftsman</p>
+        </div>
+        
+        <div class="quote">
+            "I don't just write code; I solve problems and create experiences that work for everyone, everywhere."
+            <strong>- My Development Philosophy</strong>
+        </div>
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>🚀 My Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2022</div>
+                        <p>Started learning programming with Scratch, MIT and web development basics</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2023</div>
+                        <p>Built first portfolio website and several small projects</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024</div>
+                        <p>Mastered front-end development and started passionate project for gifts.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025</div>
+                        <p>Got a 3<sup>rd</sup> prize in a WEB Devlovent compation. Learn JavaScript and some Back-end.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2026-Present</div>
+                        <p>Focusing on offline-first applications and teaching programming and learning python programming.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🛠️ Skills & Tools</h3>
+                <p>I specialize in creating responsive, accessible web applications:</p>
+                <div class="skills-list">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Project Planning</span>
+                    <span class="skill-tag">Technical Writing</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>🎯 My Mission</h3>
+                <p>To create technology that:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Works offline and online seamlessly</li>
+                    <li>Is accessible to everyone</li>
+                    <li>Solves real-world problems</li>
+                    <li>Has clean, maintainable code</li>
+                    <li>Provides excellent user experience</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>💼 Projects</h3>
+                <p>Some of my notable projects:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li><strong>Offline Dice Roller</strong> - Works without internet</li>
+                    <li><strong>Binary Pixel Art Game</strong> - Educational tool</li>
+                    <li><strong>Practice App</strong> - Language learning aid</li>
+                    <li><strong>Portfolio Website</strong> - Showcase of my work</li>
+                    <li><strong>Business and Service</strong> - Create DIY and sell</li>
+                    <li><strong>Another Goal</strong> - Will Join WRO & Win</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>📞 Let's Connect</h3>
+            <p>I'm always open to collaborations, feedback, or just a chat about technology!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        kopyonetun48@gmail.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div>
+                        <strong>This Portfolio</strong><br>
+                        <a href="/IloveHer/index.html" style="border: none; ">IIoveHer</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div>
+                        <strong>GitHub</strong><br>
+                        https://github.com/Aung-Kaung-Thant
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <strong>Location</strong><br>
+                        18.786725, 95.243675
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #333;">
+            <p style="color: #8a7455;">
+                Built with passion and attention to detail.<br>
+                Every pixel matters, every line of code tells a story.
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                © 2026 Nicholas Cain. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
